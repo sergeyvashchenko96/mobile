@@ -1,0 +1,48 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <header>
+      <div class="header-child">
+        <img src="../../assets/img/group.png">
+        <div class="name-and-email">
+          <p class="name">Іванов Іван</p>
+          <p class="email">user@gmail.com</p>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <p class="menu">Меню</p>
+      <div class="nav-item">
+        <div class="icon">
+          <img src="../../assets/img/menu-dark.png">
+        </div>
+        <p class="nav-item__text">Мої завдання</p>
+      </div>
+      <div class="nav-item">
+        <div class="icon">
+          <img src="../../assets/img/calendar.png">
+        </div>
+        <p class="nav-item__text">Мої зустрічі</p>
+      </div>
+      <div class="nav-item">
+        <div class="icon">
+          <img src="../../assets/img/clients.png">
+        </div>
+        <p class="nav-item__text">Клієнти</p>
+      </div>
+      <div class="nav-item absolute">
+        <div class="icon">
+          <img src="../../assets/img/shut-down.png">
+        </div>
+        <p class="nav-item__text">Вийти</p>
+      </div>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <a type="button" mat-button (click)="drawer.toggle()">
+      <img src="../../assets/img/sidenav.png">
+    </a>
+    <img class="logo" src="../../assets/img/logo.png">
+  </div>
+
+</mat-drawer-container>

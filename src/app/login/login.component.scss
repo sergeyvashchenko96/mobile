@@ -1,0 +1,66 @@
+.login {
+  background-color: #202226;
+  height: 100vh;
+  .login__image {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    display: block;
+    padding-top: 37px;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: condensed;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mat-focused .mat-form-field-label {
+    color: #979797 !important;
+  }
+
+  .mat-form-field-ripple {
+    background-color: #979797 !important;
+  }
+  .mat-input-element {
+    caret-color: #979797 !important;
+  }
+  .mat-form-field-ripple {
+    background: #979797 !important;
+  }
+  button {
+    width: 300px;
+    height: 50px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0, 122, 255, 0.28);
+    background-color: #2c93f3;
+    color: white;
+    font-weight: bold;
+    margin-top: 92px;
+    border: 0;
+  }
+  .footer-text {
+    position: absolute;
+    bottom: 31px;
+    text-align: center;
+    color: #989898;
+    font-size: 14px;
+    left: 0;
+    right: 0;
+  }
+  mat-form-field {
+    max-width: 375px;
+    width: 100%;
+  }
+}
