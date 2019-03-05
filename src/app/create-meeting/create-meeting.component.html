@@ -11,22 +11,21 @@
       <p class="normal right">Довгота - 30.480146</p>
     </div>
   </div>
-  <mat-form-field class="demo-chip-list">
-    <mat-chip-list #chipList>
-      <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
-                [removable]="removable" (remove)="remove(fruit)">
-        {{fruit.name}}
-        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-      </mat-chip>
-      <input placeholder="Обрати клієнта"
-             [matChipInputFor]="chipList"
-             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-             [matChipInputAddOnBlur]="addOnBlur"
-             (matChipInputTokenEnd)="add($event)"/>
-    </mat-chip-list>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Обрати клієнта" aria-label="State" [matAutocomplete]="auto" [(ngModel)]="nameItem"
+           [formControl]="stateCtrl" (blur)="onBlurMethod()">
+    <div class="circle">
+      <img src="../../assets/img/pen.png">
+    </div>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let item of names  | filterBy: nameItem" [value]="item">
+        <span>{{ item }}</span>
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 
-  <app-second-chips></app-second-chips>
+
+
   <div class="action">
     <div class="action-div" (click)="showSms = true">
       <div>
@@ -44,6 +43,9 @@
     <div class="date-div">
       <div class="start">
         <input type="text" placeholder="Початок">
+      </div>
+      <div class="end">
+        <input type="text" placeholder="Кінець">
       </div>
       <button class="finish" (click)="finish()">ЗАВЕРШИТИ</button>
     </div>

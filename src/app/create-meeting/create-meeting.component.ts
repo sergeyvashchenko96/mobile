@@ -1,11 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {ElementRef, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {MatAutocompleteSelectedEvent, MatChipInputEvent, MatAutocomplete} from '@angular/material';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 
+import {Observable} from 'rxjs/Observable';
+import {startWith} from 'rxjs/operators/startWith';
+import {map} from 'rxjs/operators/map';
 
 @Component({
   selector: 'app-create-meeting',
@@ -17,51 +15,33 @@ export class CreateMeetingComponent {
   showDate = false;
   showFinal = false;
   sms = '';
-  visible: boolean = true;
-  selectable: boolean = true;
-  removable: boolean = true;
-  addOnBlur: boolean = true;
-
-  // Enter, comma
-  separatorKeysCodes = [ENTER, COMMA];
-
-  fruits = [
-    {name: 'Иван'},
-    {name: 'Сергей'},
-    {name: 'Максим'},
+  nameItem = '';
+  names = [
+    'Иван', 'Алекс', 'Настя'
   ];
+  stateCtrl: FormControl;
 
 
-  add(event: MatChipInputEvent): void {
-    let input = event.input;
-    let value = event.value;
-
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.fruits.push({name: value.trim()});
-    }
-
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
-  }
-
-  remove(fruit: any): void {
-    let index = this.fruits.indexOf(fruit);
-
-    if (index >= 0) {
-      this.fruits.splice(index, 1);
-    }
+  constructor() {
+    this.stateCtrl = new FormControl();
   }
 
   submit() {
     this.showDate = true;
     this.showSms = false;
   }
+
   finish() {
     this.showDate = false;
     this.showFinal = true;
   }
 
+
+  onBlurMethod() {
+    if (this.names.includes(this.nameItem)) {
+      return;
+    } else {
+      this.nameItem = '';
+    }
+  }
 }

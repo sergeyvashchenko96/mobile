@@ -16,7 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SecondChipsComponent } from './create-meeting/second-chips/second-chips.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import 'hammerjs';
-
+import { FilterPipeModule } from 'ngx-filter-pipe';
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'task', component: TaskComponent},
@@ -51,6 +51,7 @@ const appRoutes: Routes = [
     MatNativeDateModule,
     MatDatepickerModule,
     ReactiveFormsModule,
+    FilterPipeModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
