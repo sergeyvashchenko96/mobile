@@ -1,5 +1,4 @@
 <h1 class="title-navbar">Зустріч</h1>
-<app-search></app-search>
 <section class="create-meeting">
   <div class="create-meeting__header">
     <div>
@@ -38,9 +37,8 @@
   </mat-form-field>
 
 
-
   <div class="action">
-    <div class="action-div" (click)="showSms = true">
+    <div class="action-div" (click)="showDate || showFinal ? '' : showSms = true ">
       <div>
         <p class="name">Послуга 1 пакету 1 проек…</p>
         <p class="status">нова</p>
@@ -50,8 +48,21 @@
       </div>
     </div>
     <div *ngIf="showSms" class="sms-div">
-      <input type="text" placeholder="Код з СМС" [(ngModel)]="sms" (ngModelChange)="submit()">
-      <button class="submit-sms">НАДІСЛАТИ СМС</button>
+      <div class="services">
+        <p class="services__text">Кількість послуг:</p>
+        <div class="count__container">
+          <img class="minus" (click)="decrement()" src="../../assets/img/minus.png">
+          <input class="count" type="number" [(ngModel)]="counter">
+          <img class="plus" (click)="increment()" src="../../assets/img/plus.png">
+        </div>
+      </div>
+      <input *ngIf="send" type="text" placeholder="Код з СМС" [(ngModel)]="sms">
+      <div *ngIf="send">
+        <i class="fas fa-redo" id="redo"></i>
+        <a class="resend">Надіслати повторно</a>
+      </div>
+      <button *ngIf="!send" class="submit-sms" (click)="send = true">НАДІСЛАТИ СМС</button>
+      <button class="submit-sms" *ngIf="send" (click)="submit()">ОК</button>
     </div>
     <div class="date-div" *ngIf="showDate">
       <div class="start">

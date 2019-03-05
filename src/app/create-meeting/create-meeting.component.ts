@@ -17,6 +17,8 @@ export class CreateMeetingComponent {
   sms = '';
   nameItem = '';
   speciality = '';
+  send = false;
+  counter = 1;
   names = [
     'Иван', 'Алекс', 'Настя'
   ];
@@ -58,4 +60,15 @@ export class CreateMeetingComponent {
       this.speciality = '';
     }
   }
+
+  decrement() {
+    if (this.counter > 1) {
+      this.counter--;
+    }
+  }
+
+  increment() {
+    this.counter++;
+  }
+
 }

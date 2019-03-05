@@ -15,7 +15,7 @@
   }
   .mat-form-field {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 10px;
   }
   .create-meeting__header {
     display: flex;
@@ -114,9 +114,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     padding: 12px;
     input {
-      width: 150px;
+      width: 100%;
       height: 40px;
       border-radius: 2px;
       box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);
@@ -133,7 +134,8 @@
       padding: 10px 14px;
     }
     .submit-sms {
-      width: 150px;
+      margin-top: 10px;
+      width: 100%;
       height: 40px;
       border-radius: 2px;
       background-color: #2c93f3;
@@ -146,6 +148,7 @@
       color: #ffffff;
       border: 0;
     }
+
   }
   .date-div {
     display: flex;
@@ -193,4 +196,53 @@
       padding: 12px;
     }
   }
+}
+
+.services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  .services__text {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: condensed;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  .count__container {
+    position: relative;
+    .count {
+      width: 144px;
+      height: 40px;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);
+      border: solid 1px #d2dadd;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .minus, .plus {
+      position: absolute;
+    }
+    .minus {
+      left: 10px;
+      top: 7px;
+    }
+    .plus {
+      right: 10px;
+      top: 7px;
+    }
+  }
+}
+
+#redo {
+  color: #2c93f3;
+  margin-top: 5px;
+}
+
+.resend {
+  color: #2c93f3;
 }
