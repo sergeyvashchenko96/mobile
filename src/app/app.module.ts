@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   {path: 'clients', component: ClientsComponent},
   {path: 'meetings', component: MeetingsComponent},
   {path: 'meetings/create', component: CreateMeetingComponent},
-  {path: 'clients/add', component: AddClientComponent}
+  {path: 'client', component: AddClientComponent}
 
 ];
 
