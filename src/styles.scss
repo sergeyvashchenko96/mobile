@@ -8,3 +8,20 @@ body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
 }
+.title-navbar{
+  font-size: 21px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 50%;
+  margin: 0 auto;
+  padding-top: 16px;
+}
