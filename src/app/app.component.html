@@ -17,19 +17,19 @@
         </div>
         <p class="nav-item__text" (click)="drawer.close()" routerLink="/meetings">Мої завдання</p>
       </div>
-      <div class="nav-item">
+      <div class="nav-item" (click)="drawer.close()" routerLink="/meetings">
         <div class="icon">
           <img src="../../assets/img/calendar.png">
         </div>
         <p class="nav-item__text">Мої зустрічі</p>
       </div>
-      <div class="nav-item" (click)="drawer.close()" routerLink="/meetings">
+      <div class="nav-item" (click)="drawer.close()" routerLink="/clients">
         <div class="icon">
           <img src="../../assets/img/clients.png">
         </div>
         <p class="nav-item__text">Клієнти</p>
       </div>
-      <div class="nav-item absolute">
+      <div class="nav-item absolute" (click)="drawer.close()" routerLink="/">
         <div class="icon">
           <img src="../../assets/img/shut-down.png">
         </div>

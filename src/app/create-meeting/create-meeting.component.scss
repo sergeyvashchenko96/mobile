@@ -1,0 +1,94 @@
+.create-meeting {
+  padding: 0 17px;
+  background: white;
+  ::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+    background-color: #989898 !important;
+  }
+
+  ::ng-deep .mat-form-field-label, ::ng-deep .mat-focused {
+    color: #989898 !important;
+  }
+
+  ::ng-deep .mat-input-element {
+    caret-color: #989898;
+    color: #989898;
+  }
+  .mat-form-field {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .create-meeting__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    div {
+      .bold {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+      }
+      .normal {
+        margin: 0;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #989898;
+      }
+      .bold.right, .normal.right {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.action {
+  .action-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    background-color: #f2f4f7;
+    padding: 7px 15px;
+    div {
+      .name {
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+        margin: 0;
+      }
+      .status {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #43b65c;
+        margin: 0;
+      }
+    }
+    .close {
+      width: 36px;
+      height: 36px;
+      border-radius: 20px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

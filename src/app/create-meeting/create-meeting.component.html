@@ -1,0 +1,53 @@
+<h1 class="title-navbar">Створення зустрічі</h1>
+<app-search></app-search>
+<section class="create-meeting">
+  <div class="create-meeting__header">
+    <div>
+      <p class="bold">05.02.2019</p>
+      <p class="normal">Широта - 50.460718 </p>
+    </div>
+    <div>
+      <p class="bold right">№3040</p>
+      <p class="normal right">Довгота - 30.480146</p>
+    </div>
+  </div>
+  <mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList>
+      <mat-chip
+        *ngFor="let fruit of fruits"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(fruit)">
+        {{fruit}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="Обрати клієнта"
+        #fruitInput
+        [formControl]="fruitCtrl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+        {{fruit}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <app-second-chips></app-second-chips>
+  <div class="action">
+    <div class="action-div">
+      <div>
+        <p class="name">Послуга 1 пакету 1 проек…</p>
+        <p class="status">нова</p>
+      </div>
+      <div class="close">
+        <img src="../../assets/img/close-red.png">
+      </div>
+    </div>
+  </div>
+</section>

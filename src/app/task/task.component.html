@@ -9,14 +9,13 @@
     </mat-expansion-panel-header>
 
     <mat-expansion-panel expanded="true" (opened)="panelOpenStateChild = true" (closed)="panelOpenStateChild = false">
-      <mat-expansion-panel-header class="child"
-                                  [ngClass]="{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}">
+      <mat-expansion-panel-header class="child" [ngClass]="{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}">
         <mat-panel-title>
           Пакет 1 проекту 1
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div class="expanded-items">
+      <div class="expanded-items" routerLink="/meetings/create">
         <div class="expanded-items__item active">
           <p>Виконано - 30<br>
             Надається у в'язниці</p>
@@ -37,7 +36,6 @@
           <p>50</p>
         </div>
       </div>
-
     </mat-expansion-panel>
   </mat-expansion-panel>
 </section>

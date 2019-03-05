@@ -1,14 +1,14 @@
 <section class="login">
   <img class="login__image" src="../../assets/img/logo.png">
   <h1 class="title">Авторизація</h1>
-  <form class="form">
+  <form class="form" [formGroup]="myForm">
     <mat-form-field>
-      <input matInput placeholder="Email">
+      <input matInput formControlName="email" placeholder="Email">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Введите пароль">
+      <input matInput formControlName="password" placeholder="Введите пароль">
     </mat-form-field>
-    <button type="submit" routerLink="/task">
+    <button type="submit"  routerLink="/task">
       УВІЙТИ
     </button>
   </form>
