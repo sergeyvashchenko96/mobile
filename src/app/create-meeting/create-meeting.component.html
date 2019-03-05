@@ -53,12 +53,12 @@
         <p class="services__text">Кількість послуг:</p>
         <div class="count__container">
           <img class="minus" (click)="decrement()" src="../../assets/img/minus.png">
-          <input class="count" type="number" [(ngModel)]="counter">
+          <input class="count" type="number" [(ngModel)]="counter" disabled>
           <img class="plus" (click)="increment()" src="../../assets/img/plus.png">
         </div>
       </div>
       <input *ngIf="send" type="text" placeholder="Код з СМС" [(ngModel)]="sms">
-      <div *ngIf="send">
+      <div *ngIf="send" class="redo-div">
         <i class="fas fa-redo" id="redo"></i>
         <a class="resend">Надіслати повторно</a>
       </div>
@@ -99,12 +99,12 @@
         <p class="services__text">Кількість послуг:</p>
         <div class="count__container">
           <img class="minus" (click)="decrement()" src="../../assets/img/minus.png">
-          <input class="count" type="number" [(ngModel)]="counter">
+          <input class="count" type="number" [(ngModel)]="counter" disabled>
           <img class="plus" (click)="increment()" src="../../assets/img/plus.png">
         </div>
       </div>
       <input *ngIf="send" type="text" placeholder="Код з СМС" [(ngModel)]="sms">
-      <div *ngIf="send">
+      <div *ngIf="send" class="redo-div">
         <i class="fas fa-redo" id="redo"></i>
         <a class="resend">Надіслати повторно</a>
       </div>
