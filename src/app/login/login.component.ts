@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   });
   show: boolean;
 
-  constructor(private formBuilder: FormBuilder,) {
+  constructor(private formBuilder: FormBuilder) {
     this.show = false;
   }
 
