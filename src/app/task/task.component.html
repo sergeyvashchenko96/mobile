@@ -4,22 +4,89 @@
   <mat-expansion-panel expanded="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header [ngClass]="{'active-header': panelOpenState, 'non-active-header': !panelOpenState}">
       <mat-panel-title>
-        Обмен шприцев
+        HealthLink
       </mat-panel-title>
     </mat-expansion-panel-header>
 
     <mat-expansion-panel expanded="true" (opened)="panelOpenStateChild = true" (closed)="panelOpenStateChild = false">
       <mat-expansion-panel-header class="child" [ngClass]="{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}">
         <mat-panel-title>
-          Пакет 1 проекту 1
+          ДКТ
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="expanded-items">
+        <div class="expanded-items__item active">
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+        <div class="expanded-items__item child">
+          <p>Консультування,<br>Тестування
+          <div routerLink="/meetings/create">
+            <img src="../../assets/img/calen.png">
+          </div>
+        </div>
+        <div class="expanded-items__item">
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+        <div class="expanded-items__item">
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+        <div class="expanded-items__item">
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel expanded="true" (opened)="panelOpenStateChild1 = true" (closed)="panelOpenStateChild1 = false">
+      <mat-expansion-panel-header class="child" [ngClass]="{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}">
+        <mat-panel-title>
+          ДУ
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="expanded-items" >
+        <div class="expanded-items__item active">
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+        <div class="expanded-items__item child">
+          <p> доведення до<br> обліку</p>
+          <div routerLink="/meetings/create">
+            <img src="../../assets/img/calen.png">
+          </div>
+        </div>
+        <div class="expanded-items__item">
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+        <div class="expanded-items__item">
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+        <div class="expanded-items__item">
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel expanded="true" (opened)="panelOpenStateChild2 = true" (closed)="panelOpenStateChild2 = false">
+      <mat-expansion-panel-header class="child" [ngClass]="{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}">
+        <mat-panel-title>
+          Супровід
         </mat-panel-title>
       </mat-expansion-panel-header>
 
       <div class="expanded-items" routerLink="/meetings/create">
         <div class="expanded-items__item active">
-          <p>Виконано - 30<br>
-            Надається у в'язниці</p>
-          <div>
+          <p>Пакет 1 проекту 1 проекту 1</p>
+          <p>50</p>
+        </div>
+        <div class="expanded-items__item child">
+          <p> видача презервативів,<br> обмін шприців</p>
+          <div routerLink="/meetings/create">
             <img src="../../assets/img/calen.png">
           </div>
         </div>
@@ -67,6 +134,5 @@
         Консультирование
       </mat-panel-title>
     </mat-expansion-panel-header>
-
   </mat-expansion-panel>
 </section>

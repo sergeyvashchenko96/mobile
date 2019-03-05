@@ -42,7 +42,7 @@
 .child.active-header {
   height: 44px !important;
   border-radius: 2px;
-  background-color: rgba(44, 147, 243, 0.1) !important;
+  background-color: #e2e7eb !important;
   .mat-expansion-panel-header-title {
     font-size: 16px;
     font-weight: bold;
@@ -72,7 +72,7 @@
   justify-content: space-around;
   max-width: 282px;
   padding: 15px 0;
-  border-top: solid 1px #d3d3d3;
+  border-bottom: solid 1px #d3d3d3;
   p {
     font-size: 14px;
     font-weight: normal;
@@ -85,7 +85,7 @@
   }
 }
 
-.expanded-items__item.active {
+.expanded-items__item.child {
   p {
     font-size: 16px;
     font-weight: normal;
@@ -105,5 +105,27 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+}
+
+.task {
+  .mat-expansion-panel-content.mat-expanded > .mat-expansion-panel-body {
+    padding: 0 !important;
+  }
+}
+
+.mat-expansion-indicator::after {
+  color: white !important;
+}
+
+.expanded-items__item.active {
+  p {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c93f3;
   }
 }
