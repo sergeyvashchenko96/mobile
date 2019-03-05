@@ -50,14 +50,14 @@
 }
 
 .action {
+  background-color: #f2f4f7;
+  padding: 7px 15px;
   .action-div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-radius: 2px;
-    background-color: #f2f4f7;
-    padding: 7px 15px;
     div {
       .name {
         font-size: 16px;
@@ -90,5 +90,49 @@
       justify-content: center;
       align-items: center;
     }
+  }
+  .sms-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    input {
+      width: 150px;
+      height: 40px;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px 0 rgba(213, 213, 213, 0.28);
+      background-color: #ffffff;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #989898;
+      border: 0;
+      box-sizing: border-box;
+      padding: 10px 14px;
+    }
+    .submit-sms{
+      width: 150px;
+      height: 40px;
+      border-radius: 2px;
+      background-color: #2c93f3;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+      border: 0;
+    }
+  }
+  .date-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
