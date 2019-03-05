@@ -16,14 +16,20 @@ export class CreateMeetingComponent {
   showFinal = false;
   sms = '';
   nameItem = '';
+  speciality = '';
   names = [
     'Иван', 'Алекс', 'Настя'
   ];
+  specialitys = [
+    'Послуга 1', 'Послуга 2'
+  ];
   stateCtrl: FormControl;
+  specialityCtrl: FormControl;
 
 
   constructor() {
     this.stateCtrl = new FormControl();
+    this.specialityCtrl = new FormControl();
   }
 
   submit() {
@@ -42,6 +48,14 @@ export class CreateMeetingComponent {
       return;
     } else {
       this.nameItem = '';
+    }
+  }
+
+  onBlurMethodSpeciality() {
+    if (this.specialitys.includes(this.speciality)) {
+      return;
+    } else {
+      this.speciality = '';
     }
   }
 }

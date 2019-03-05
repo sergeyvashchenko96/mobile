@@ -14,11 +14,24 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Обрати клієнта" aria-label="State" [matAutocomplete]="auto" [(ngModel)]="nameItem"
            [formControl]="stateCtrl" (blur)="onBlurMethod()">
-    <div class="circle">
+    <div class="circle" routerLink="/clients">
       <img src="../../assets/img/pen.png">
     </div>
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let item of names  | filterBy: nameItem" [value]="item">
+        <span>{{ item }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Додати послугу" aria-label="State" [matAutocomplete]="spec" [(ngModel)]="speciality"
+           [formControl]="specialityCtrl" (blur)="onBlurMethodSpeciality()">
+    <div class="circle">
+      <img src="../../assets/img/add.png">
+    </div>
+    <mat-autocomplete #spec="matAutocomplete">
+      <mat-option *ngFor="let item of specialitys  | filterBy: speciality" [value]="item">
         <span>{{ item }}</span>
       </mat-option>
     </mat-autocomplete>
@@ -40,7 +53,7 @@
       <input type="text" placeholder="Код з СМС" [(ngModel)]="sms" (ngModelChange)="submit()">
       <button class="submit-sms">НАДІСЛАТИ СМС</button>
     </div>
-    <div class="date-div">
+    <div class="date-div" *ngIf="showDate">
       <div class="start">
         <input type="text" placeholder="Початок">
       </div>
