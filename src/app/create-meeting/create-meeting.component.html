@@ -63,14 +63,14 @@
         <a class="resend">Надіслати повторно</a>
       </div>
       <button *ngIf="!send" class="submit-sms" (click)="send = true">НАДІСЛАТИ СМС</button>
-      <button class="submit-sms" *ngIf="send" (click)="submit()">ОК</button>
+      <button class="submit-sms" *ngIf="send" (click)="submit()">Почати послугу</button>
     </div>
     <div class="date-div" *ngIf="showDate">
       <div class="start">
-        <input type="text" placeholder="Початок">
+        <input type="text" placeholder="Початок" [(ngModel)]="startTime">
       </div>
       <div class="end">
-        <input type="text" placeholder="Кінець">
+        <input type="text" placeholder="Кінець" [(ngModel)]="endTime">
       </div>
       <button class="finish" (click)="finish()">ЗАВЕРШИТИ</button>
     </div>

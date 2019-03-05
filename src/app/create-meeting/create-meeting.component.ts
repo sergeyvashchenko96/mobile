@@ -27,7 +27,12 @@ export class CreateMeetingComponent {
   ];
   stateCtrl: FormControl;
   specialityCtrl: FormControl;
-
+  startTime = new Date().toLocaleTimeString('en-US', {
+    hour12: false,
+    hour: 'numeric',
+    minute: 'numeric'
+  });
+  endTime = '';
 
   constructor() {
     this.stateCtrl = new FormControl();
@@ -40,8 +45,13 @@ export class CreateMeetingComponent {
   }
 
   finish() {
-    this.showDate = false;
-    this.showFinal = true;
+    // this.showDate = false;
+    //     //     // this.showFinal = true;
+    this.endTime = new Date().toLocaleTimeString('en-US', {
+      hour12: false,
+      hour: 'numeric',
+      minute: 'numeric'
+    });
   }
 
 

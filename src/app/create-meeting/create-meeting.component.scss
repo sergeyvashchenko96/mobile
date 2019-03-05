@@ -67,11 +67,14 @@
       top: -8px;
     }
   }
+  .start, .end {
+    margin: 11px 0;
+  }
 }
 
 .action {
   background-color: #f2f4f7;
-  padding: 7px 15px;
+  padding: 11px 15px;
   .action-div {
     display: flex;
     flex-direction: row;
