@@ -7,16 +7,16 @@
   right: 0;
   z-index: 3;
   ::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
-    background-color: white !important;
+    background-color: #979797 !important;
   }
 
   ::ng-deep .mat-form-field-label, ::ng-deep .mat-focused {
-    color: white !important;
+    color: #979797 !important;
   }
 
   ::ng-deep .mat-input-element {
-    caret-color: white;
-    color: white;
+    caret-color: #979797;
+    color: #979797;
   }
 
   .login__image {
@@ -44,6 +44,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
   .mat-focused .mat-form-field-label {
     color: #979797 !important;
@@ -81,6 +85,16 @@
   mat-form-field {
     max-width: 375px;
     width: 90%;
+  }
+  .password {
+    position: relative;
+    .eye {
+      position: absolute;
+      width: 27px;
+      height: 18px;
+      object-fit: contain;
+      right: 0;
+    }
   }
 }
 

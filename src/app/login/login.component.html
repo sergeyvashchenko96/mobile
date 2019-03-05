@@ -3,10 +3,11 @@
   <h1 class="title">Авторизація</h1>
   <form class="form" [formGroup]="myForm">
     <mat-form-field>
-      <input matInput formControlName="email" placeholder="Email">
+      <input matInput formControlName="email" placeholder="Email" type="text">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput formControlName="password" placeholder="Введите пароль">
+    <mat-form-field class="password">
+      <img class="eye" src="../../assets/img/eye.png"  (click)="password()">
+      <input matInput formControlName="password" placeholder="Введите пароль" [type]="show ? 'text' : 'password'">
     </mat-form-field>
     <button type="submit"  routerLink="/task">
       УВІЙТИ

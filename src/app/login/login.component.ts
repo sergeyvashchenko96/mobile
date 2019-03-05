@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,9 +11,17 @@ export class LoginComponent implements OnInit {
     email: ['', Validators.required],
     password: ['', Validators.required]
   });
-  constructor(private formBuilder: FormBuilder){
+  show: boolean;
+
+  constructor(private formBuilder: FormBuilder,) {
+    this.show = false;
   }
+
   ngOnInit() {
+  }
+
+  password() {
+    this.show = !this.show;
   }
 
 }
