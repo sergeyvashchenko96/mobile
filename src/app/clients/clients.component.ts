@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./clients.component.scss']
 })
 export class ClientsComponent implements OnInit {
-  items = [
+  clients = [
     {
       name: 'Сергієнко Іван Васильович',
       number: '3806852145623   |   21.05.1994'
