@@ -11,7 +11,8 @@
     </div>
   </div>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Обрати клієнта" aria-label="State" [matAutocomplete]="auto" [(ngModel)]="nameItem"
+    <input style="margin-top: 5px" matInput placeholder="Обрати клієнта" aria-label="State" [matAutocomplete]="auto"
+           [(ngModel)]="nameItem"
            [formControl]="stateCtrl" (blur)="onBlurMethod()">
     <div class="circle" routerLink="/clients">
       <img src="../../assets/img/pen.png">
