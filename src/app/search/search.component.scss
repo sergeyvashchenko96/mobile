@@ -1,5 +1,5 @@
-.search-component{
-  input{
+.search-component {
+  input {
     width: 100%;
     height: 50px;
     font-size: 16px;
@@ -12,5 +12,7 @@
     padding-left: 55px;
     margin-bottom: 20px;
     border: 0;
+    background: url('../../assets/img/search.png') no-repeat scroll 12px 14px;
+    box-sizing: border-box;
   }
 }
