@@ -8,6 +8,7 @@ import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import {TaskComponent} from './task/task.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    TaskComponent
+    TaskComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
