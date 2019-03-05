@@ -11,7 +11,7 @@ import {map} from 'rxjs/operators/map';
   styleUrls: ['./create-meeting.component.scss']
 })
 export class CreateMeetingComponent {
-  showSms = false;
+  showSms = true;
   showDate = false;
   showFinal = false;
   sms = '';
