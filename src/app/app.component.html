@@ -11,7 +11,7 @@
     </header>
     <div class="main">
       <p class="menu">Меню</p>
-      <div class="nav-item" routerLink="/task">
+      <div class="nav-item" (click)="drawer.close()" routerLink="/task">
         <div class="icon">
           <img src="../../assets/img/menu-dark.png">
         </div>
@@ -23,7 +23,7 @@
         </div>
         <p class="nav-item__text">Мої зустрічі</p>
       </div>
-      <div class="nav-item" routerLink="/clients">
+      <div class="nav-item" (click)="drawer.close()" routerLink="/clients">
         <div class="icon">
           <img src="../../assets/img/clients.png">
         </div>
