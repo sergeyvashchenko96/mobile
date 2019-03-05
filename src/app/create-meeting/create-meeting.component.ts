@@ -15,6 +15,7 @@ import {map, startWith} from 'rxjs/operators';
 export class CreateMeetingComponent {
   showSms = false;
   showDate = false;
+  showFinal = false;
   sms = '';
   visible: boolean = true;
   selectable: boolean = true;
@@ -57,7 +58,10 @@ export class CreateMeetingComponent {
   submit() {
     this.showDate = true;
     this.showSms = false;
-
+  }
+  finish() {
+    this.showDate = false;
+    this.showFinal = true;
   }
 
 }
