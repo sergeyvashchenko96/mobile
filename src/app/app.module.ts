@@ -10,11 +10,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { SearchComponent } from './search/search.component';
 import { ClientsComponent } from './clients/clients.component';
+import { MeetingsComponent } from './meetings/meetings.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'task', component: TaskComponent},
-  {path: 'clients', component: ClientsComponent}
+  {path: 'clients', component: ClientsComponent},
+  {path: 'meetings', component: MeetingsComponent}
 
 ];
 
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     LoginComponent,
     TaskComponent,
     SearchComponent,
-    ClientsComponent
+    ClientsComponent,
+    MeetingsComponent
   ],
   imports: [
     BrowserModule,

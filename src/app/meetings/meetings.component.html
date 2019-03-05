@@ -1,0 +1,14 @@
+<h1 class="title-navbar">Зустрічі</h1>
+<app-search></app-search>
+<section class="meetings">
+  <div class="items" *ngFor="let item of items">
+    <div class="items__description">
+      <p class="name">{{item.header}}</p>
+      <p class="text">{{item.text}}</p>
+    </div>
+    <div class="image">
+      <img *ngIf="item.isDone" src="../../assets/img/success.png">
+      <img *ngIf="!item.isDone" src="../../assets/img/declined.png">
+    </div>
+  </div>
+</section>

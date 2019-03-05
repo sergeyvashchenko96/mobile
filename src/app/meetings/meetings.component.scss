@@ -1,0 +1,41 @@
+.meetings {
+  .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: solid 1px #ededed;
+    padding-top: 8px;
+    padding-bottom: 11px;
+    .items__description {
+      .name {
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #000000;
+        margin: 0;
+      }
+      .text {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.71;
+        letter-spacing: normal;
+        color: #989898;
+        margin: 0;
+      }
+    }
+    .image {
+      img {
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+      }
+    }
+  }
+}
