@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawer class="example-sidenav" mode="over">
+  <mat-drawer #drawer class="example-sidenav" mode="over" (swipeleft)="drawer.close()">
     <header>
       <div class="header-child">
         <img src="../../assets/img/group.png">
@@ -37,7 +37,7 @@
       </div>
     </div>
   </mat-drawer>
-  <mat-drawer-content>
+  <mat-drawer-content (swiperight)="drawer.open()">
     <div class="example-sidenav-content">
       <a type="button" mat-button (click)="drawer.toggle()">
         <img src="../../assets/img/sidenav.png">

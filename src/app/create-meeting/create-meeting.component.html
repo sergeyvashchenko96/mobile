@@ -41,17 +41,10 @@
       <input type="text" placeholder="Код з СМС" [(ngModel)]="sms" (ngModelChange)="submit()">
       <button class="submit-sms">НАДІСЛАТИ СМС</button>
     </div>
-    <div class="date-div" *ngIf="showDate">
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Початок">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput [matDatepicker]="pickerSecond" placeholder="Кінець">
-        <mat-datepicker-toggle matSuffix [for]="pickerSecond"></mat-datepicker-toggle>
-        <mat-datepicker #pickerSecond></mat-datepicker>
-      </mat-form-field>
+    <div class="date-div">
+      <div class="start">
+        <input type="text" placeholder="Початок">
+      </div>
       <button class="finish" (click)="finish()">ЗАВЕРШИТИ</button>
     </div>
     <div class="final" *ngIf="showFinal">

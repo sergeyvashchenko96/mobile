@@ -15,6 +15,8 @@ import {CreateMeetingComponent} from './create-meeting/create-meeting.component'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SecondChipsComponent } from './create-meeting/second-chips/second-chips.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import 'hammerjs';
+
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'task', component: TaskComponent},
