@@ -1,0 +1,15 @@
+.add-client {
+  padding: 0 18px;
+  mat-form-field {
+    width: 100%;
+  }
+  .date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    mat-form-field {
+      margin-right: 16px;
+    }
+  }
+}

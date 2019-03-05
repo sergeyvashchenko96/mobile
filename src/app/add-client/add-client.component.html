@@ -1,0 +1,36 @@
+<h1 class="title-navbar">Новий кліент</h1>
+<section class="add-client">
+  <mat-form-field>
+    <input matInput placeholder="Код клієнта">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Телефон">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Прізвище">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Ім’я">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="По батькові">
+  </mat-form-field>
+  <div class="date">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Дата народження">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Стать">
+        <mat-option>
+         Чоловіча
+        </mat-option>
+        <mat-option>
+          Жіноча
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+</section>
