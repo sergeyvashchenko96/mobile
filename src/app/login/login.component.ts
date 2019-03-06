@@ -24,4 +24,13 @@ export class LoginComponent implements OnInit {
     this.show = !this.show;
   }
 
+  checkForm() {
+    console.log(this.myForm.value.password);
+    if (this.myForm.value.email === '1@1' && this.myForm.value.password === '1') {
+      return false;
+    } else{
+      return true;
+    }
+  }
+
 }
