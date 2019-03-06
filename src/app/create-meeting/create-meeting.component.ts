@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Inject, Component} from '@angular/core';
 import {FormControl} from '@angular/forms';
+import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
+
 
 import {Observable} from 'rxjs/Observable';
 import {startWith} from 'rxjs/operators/startWith';
@@ -11,6 +13,8 @@ import {map} from 'rxjs/operators/map';
   styleUrls: ['./create-meeting.component.scss']
 })
 export class CreateMeetingComponent {
+  meetting: {};
+  project: {};
   showSms = true;
   showDate = false;
   showFinal = false;
@@ -20,11 +24,9 @@ export class CreateMeetingComponent {
   send = false;
   counter = 1;
   names = [
-    'Иван', 'Алекс', 'Настя'
+    'Іванов Іван Іванович', 'Петров Петро Петрович', 'Сидоров Сидор Сидорович'
   ];
-  specialitys = [
-    'Послуга 1', 'Послуга 2'
-  ];
+  specialitys = [];
   stateCtrl: FormControl;
   specialityCtrl: FormControl;
   startTime = new Date().toLocaleTimeString('en-US', {
@@ -34,11 +36,12 @@ export class CreateMeetingComponent {
   });
   endTime = '';
 
-  constructor() {
+  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) {
     this.stateCtrl = new FormControl();
     this.specialityCtrl = new FormControl();
   }
 
+ 
   submit() {
     this.showDate = true;
     this.showSms = false;
@@ -52,6 +55,7 @@ export class CreateMeetingComponent {
       hour: 'numeric',
       minute: 'numeric'
     });
+
   }
 
 
@@ -79,6 +83,34 @@ export class CreateMeetingComponent {
 
   increment() {
     this.counter++;
+  }
+
+  ngOnInit() {  
+    this.meetting = this.storage.get("current_meetting");
+    
+
+    this.project = this.storage.get("project");
+         
+      for (let i = 0; i < this.project.packages.length ; i++) {
+        for (let j = 0; j < this.project.packages[i].services.length ; j++) {
+          this.specialitys.push(  this.project.packages[i].services[j].name + "(" + this.project.packages[i].name + ")");
+        }
+      }
+  }
+
+
+  AddService(event, serv){
+    console.log("service added");
+    console.log(serv);
+    event.stopPropagation();
+    if (serv != ""){
+      this.meetting.services.push({name: serv});
+      this.speciality = "";
+    }
+  }
+
+  deleteService(pservice){
+    this.meetting.services.splice(pservice, 1);
   }
 
 }

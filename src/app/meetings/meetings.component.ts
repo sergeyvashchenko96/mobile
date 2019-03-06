@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ViewChild, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-meetings',
@@ -6,6 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./meetings.component.scss']
 })
 export class MeetingsComponent implements OnInit {
+ 
   items = [
     {
       header: 'Консультація - 26.01.2019',

@@ -19,6 +19,7 @@ import 'hammerjs';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { AddClientComponent } from './add-client/add-client.component';
 import {MatSelectModule} from '@angular/material/select';
+import { StorageServiceModule } from 'ngx-webstorage-service';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    StorageServiceModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -60,7 +62,6 @@ const appRoutes: Routes = [
     FilterPipeModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

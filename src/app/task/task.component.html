@@ -1,138 +1,35 @@
 <h1 class="title-navbar">Мої завдання</h1>
 <app-search></app-search>
-<section class="task">
+<section class="task" *ngIf="project.packages">
   <mat-expansion-panel expanded="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header [ngClass]="{'active-header': panelOpenState, 'non-active-header': !panelOpenState}">
       <mat-panel-title>
-        HealthLink
+        {{project.name}}
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <mat-expansion-panel expanded="true" (opened)="panelOpenStateChild = true" (closed)="panelOpenStateChild = false">
-      <mat-expansion-panel-header class="child" [ngClass]="{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}">
+    <mat-expansion-panel  (opened)="panelOpenStateChild[pi]=true" (closed)="panelOpenStateChild[pi]=false" *ngFor="let package of project.packages; index as pi">
+      <mat-expansion-panel-header class="child" [ngClass]="{'active-header': panelOpenStateChild[pi], 'non-active-header':  !panelOpenStateChild[pi]}">
         <mat-panel-title>
-          ДКТ
+          {{package.name}}
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div class="expanded-items">
-        <div class="expanded-items__item active">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
+      <div class="expanded-items" *ngFor="let service of package.services; index as si" (click)="panelOpenStateSubChild[pi*20 + si]=!panelOpenStateSubChild[pi*20 + si]">
+        <div class="item-service" [ngClass]="{'active': panelOpenStateSubChild[pi*20 + si]}" >
+          <p>{{service.name}}</p>
+          <p class="service-count">{{service.count}}</p>
         </div>
-        <div class="expanded-items__item child">
-          <p>Консультування,<br>Тестування
-          <div routerLink="/meetings/create">
+      
+        <div class="item-service child" *ngIf="panelOpenStateSubChild[pi*20 + si]">
+          <p>Виконано {{service.done}}<br>{{service.comment}}
+          <div class="create_meeting" (click)="meetingCreate(service)" routerLink="/meetings/create">
             <img src="../../assets/img/calen.png">
           </div>
         </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
       </div>
     </mat-expansion-panel>
-    <mat-expansion-panel expanded="true" (opened)="panelOpenStateChild1 = true" (closed)="panelOpenStateChild1 = false">
-      <mat-expansion-panel-header class="child" [ngClass]="{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}">
-        <mat-panel-title>
-          ДУ
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <div class="expanded-items" >
-        <div class="expanded-items__item active">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-        <div class="expanded-items__item child">
-          <p> доведення до<br> обліку</p>
-          <div routerLink="/meetings/create">
-            <img src="../../assets/img/calen.png">
-          </div>
-        </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-      </div>
-    </mat-expansion-panel>
-    <mat-expansion-panel expanded="true" (opened)="panelOpenStateChild2 = true" (closed)="panelOpenStateChild2 = false">
-      <mat-expansion-panel-header class="child" [ngClass]="{'active-header': panelOpenStateChild, 'non-active-header': !panelOpenStateChild}">
-        <mat-panel-title>
-          Супровід
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <div class="expanded-items" routerLink="/meetings/create">
-        <div class="expanded-items__item active">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-        <div class="expanded-items__item child">
-          <p> видача презервативів,<br> обмін шприців</p>
-          <div routerLink="/meetings/create">
-            <img src="../../assets/img/calen.png">
-          </div>
-        </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-        <div class="expanded-items__item">
-          <p>Пакет 1 проекту 1 проекту 1</p>
-          <p>50</p>
-        </div>
-      </div>
-    </mat-expansion-panel>
+   
   </mat-expansion-panel>
-  <mat-expansion-panel disabled="true">
-  <mat-expansion-panel-header class="non-active-header">
-    <mat-panel-title>
-      Выдача презервативов
-    </mat-panel-title>
-  </mat-expansion-panel-header>
-
-  </mat-expansion-panel>
-  <mat-expansion-panel disabled="true">
-    <mat-expansion-panel-header class="non-active-header">
-      <mat-panel-title>
-        Доведение до учета
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-
-  </mat-expansion-panel>
-  <mat-expansion-panel disabled="true">
-  <mat-expansion-panel-header class="non-active-header">
-    <mat-panel-title>
-      Тестирование
-    </mat-panel-title>
-  </mat-expansion-panel-header>
-</mat-expansion-panel>
-  <mat-expansion-panel disabled="true">
-    <mat-expansion-panel-header class="non-active-header">
-      <mat-panel-title>
-        Консультирование
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-  </mat-expansion-panel>
+ 
 </section>

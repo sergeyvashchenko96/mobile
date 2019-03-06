@@ -27,7 +27,7 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Додати послугу" aria-label="State" [matAutocomplete]="spec" [(ngModel)]="speciality"
            [formControl]="specialityCtrl" (blur)="onBlurMethodSpeciality()">
-    <div class="circle">
+    <div class="circle" (click)="AddService($event,speciality)">
       <img src="../../assets/img/add.png">
     </div>
     <mat-autocomplete #spec="matAutocomplete">
@@ -38,13 +38,13 @@
   </mat-form-field>
 
 
-  <div class="action">
+  <div class="action" *ngFor="let service of meetting.services">
     <div class="action-div" (click)="showDate || showFinal ? '' : showSms = true ">
       <div>
-        <p class="name">Послуга 1 пакету 1 проек…</p>
+        <p class="name">{{service.name}}</p>
         <p class="status">нова</p>
       </div>
-      <div class="close">
+      <div class="close" (click)="deleteService(service)">
         <img src="../../assets/img/close-red.png">
       </div>
     </div>
@@ -53,12 +53,12 @@
         <p class="services__text">Кількість послуг:</p>
         <div class="count__container">
           <img class="minus" (click)="decrement()" src="../../assets/img/minus.png">
-          <input class="count" type="number" [(ngModel)]="counter" disabled>
+          <input class="count" type="number" [(ngModel)]="counter">
           <img class="plus" (click)="increment()" src="../../assets/img/plus.png">
         </div>
       </div>
       <input *ngIf="send" type="text" placeholder="Код з СМС" [(ngModel)]="sms">
-      <div *ngIf="send" class="redo-div">
+      <div *ngIf="send">
         <i class="fas fa-redo" id="redo"></i>
         <a class="resend">Надіслати повторно</a>
       </div>
@@ -84,49 +84,4 @@
     </div>
   </div>
 
-  <div class="action">
-    <div class="action-div" (click)="showDate || showFinal ? '' : showSms = true ">
-      <div>
-        <p class="name">Послуга 1 пакету 1 проек…</p>
-        <p class="status">нова</p>
-      </div>
-      <div class="close">
-        <img src="../../assets/img/close-red.png">
-      </div>
-    </div>
-    <div *ngIf="showSms" class="sms-div">
-      <div class="services">
-        <p class="services__text">Кількість послуг:</p>
-        <div class="count__container">
-          <img class="minus" (click)="decrement()" src="../../assets/img/minus.png">
-          <input class="count" type="number" [(ngModel)]="counter" disabled>
-          <img class="plus" (click)="increment()" src="../../assets/img/plus.png">
-        </div>
-      </div>
-      <input *ngIf="send" type="text" placeholder="Код з СМС" [(ngModel)]="sms">
-      <div *ngIf="send" class="redo-div">
-        <i class="fas fa-redo" id="redo"></i>
-        <a class="resend">Надіслати повторно</a>
-      </div>
-      <button *ngIf="!send" class="submit-sms" (click)="send = true">НАДІСЛАТИ СМС</button>
-      <button class="submit-sms" *ngIf="send" (click)="submit()">Почати послугу</button>
-    </div>
-    <div class="date-div" *ngIf="showDate">
-      <div class="start">
-        <input type="text" placeholder="Початок" [(ngModel)]="startTime">
-      </div>
-      <div class="end">
-        <input type="text" placeholder="Кінець" [(ngModel)]="endTime">
-      </div>
-      <button class="finish" (click)="finish()">ЗАВЕРШИТИ</button>
-    </div>
-    <div class="final" *ngIf="showFinal">
-      <select>
-        <option disabled>Виберіть результат</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
-    </div>
-  </div>
 </section>
