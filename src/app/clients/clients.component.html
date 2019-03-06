@@ -3,9 +3,9 @@
 <img class="add-client" src="../../assets/img/add-client.png" routerLink="/client">
 <section class="clients">
   <div class="client" *ngFor="let client of clients">
-    <div>
-      <p class="client-name">{{client.name}}</p>
-      <p class="client-number">{{client.number}}</p>
+    <div (click)="OpenClient(client)">
+      <p class="client-name">{{client.firstname}} {{client.middlename}} {{client.middlename}}</p>
+      <p class="client-number">{{client.phone}} | {{client.bithdate}} </p>
     </div>
     <div class="settings">
       <img src="../../assets/img/settings.png">

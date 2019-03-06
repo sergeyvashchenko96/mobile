@@ -1,6 +1,6 @@
 import {Inject, Component} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {LOCAL_STORAGE, StorageService} from 'ngx-webstorage-service';
+import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
 
 import {Observable} from 'rxjs/Observable';
@@ -13,8 +13,8 @@ import {map} from 'rxjs/operators/map';
   styleUrls: ['./create-meeting.component.scss']
 })
 export class CreateMeetingComponent {
-  meetting: any;
-  project: any;
+  meetting: any = {};
+  project: any  = {};
   showSms = true;
   showDate = false;
   showFinal = false;
@@ -41,11 +41,8 @@ export class CreateMeetingComponent {
     this.specialityCtrl = new FormControl();
   }
 
-  submit() {
-    this.showDate = true;
-    this.showSms = false;
-  }
-
+ 
+ 
   finish() {
     // this.showDate = false;
     //     //     // this.showFinal = true;
@@ -84,33 +81,49 @@ export class CreateMeetingComponent {
     this.counter++;
   }
 
-  ngOnInit() {
-    this.meetting = this.storage.get('current_meetting');
+  ngOnInit() {  
+    this.meetting = this.storage.get("current_meetting");
+    
 
-
-    this.project = this.storage.get('project');
-    this.project = <any>this.project;
-      // @ts-ignore
-    for (let i = 0; i < <any>this.project.packages.length; i++) {
-      for (let j = 0; j < this.project.packages[i].services.length; j++) {
-        this.specialitys.push(this.project.packages[i].services[j].name + '(' + this.project.packages[i].name + ')');
+    this.project = this.storage.get("project");
+         
+      for (let i = 0; i < this.project.packages.length ; i++) {
+        for (let j = 0; j < this.project.packages[i].services.length ; j++) {
+          this.specialitys.push(  this.project.packages[i].services[j].name + "(" + this.project.packages[i].name + ")");
+        }
       }
-    }
   }
 
 
-  AddService(event, serv) {
-    console.log('service added');
+  AddService(event, serv){
+    console.log("service added");
     console.log(serv);
     event.stopPropagation();
-    if (serv != '') {
-      this.meetting.services.push({name: serv});
-      this.speciality = '';
+    if (serv != ""){
+      this.meetting.services.push({name: serv, state: 'new'});
+      this.speciality = "";
     }
   }
 
-  deleteService(pservice) {
+  deleteService(pservice){
     this.meetting.services.splice(pservice, 1);
   }
 
+  sendSMS(service){
+    service.state = "send";
+  }  
+
+  verifySMS(service){
+    service.state = "verified";   
+  }
+
+  startService(service) {
+    service.state = "started"
+  }
+
+  finishService(service){
+    service.state = "finished"
+  }
+
+ // this.http.get(url, {search: search}).subscribe(res => console.log(res.json())); (1)
 }

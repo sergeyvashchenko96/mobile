@@ -1,4 +1,7 @@
+
 import {Component, OnInit} from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
 @Component({
   selector: 'app-clients',
@@ -6,26 +9,19 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./clients.component.scss']
 })
 export class ClientsComponent implements OnInit {
-  clients = [
-    {
-      name: 'Сергієнко Іван Васильович',
-      number: '3806852145623   |   21.05.1994'
-    },
-    {
-      name: 'Сергієнко Іван Васильович',
-      number: '3806852145623   |   21.05.1994'
-    },
-    {
-      name: 'Сергієнко Іван Васильович',
-      number: '3806852145623   |   21.05.1994'
-    }
-  ];
+  clients = [];
 
-  constructor() {
+  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) {
+
   }
 
   ngOnInit() {
+    this.clients = this.storage.get("clients");
+    console.log(this.clients);
   }
 
+  OpenClient(client){
+    
+  }
 
 }

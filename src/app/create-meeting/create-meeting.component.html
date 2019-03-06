@@ -42,7 +42,7 @@
     <div class="action-div" (click)="showDate || showFinal ? '' : showSms = true ">
       <div>
         <p class="name">{{service.name}}</p>
-        <p class="status">нова</p>
+        <p class="status">{{service.state}}</p>
       </div>
       <div class="close" (click)="deleteService(service)">
         <img src="../../assets/img/close-red.png">
@@ -53,28 +53,29 @@
         <p class="services__text">Кількість послуг:</p>
         <div class="count__container">
           <img class="minus" (click)="decrement()" src="../../assets/img/minus.png">
-          <input class="count" type="number" [(ngModel)]="counter">
+          <input class="count" type="number" readonly [(ngModel)]="counter">
           <img class="plus" (click)="increment()" src="../../assets/img/plus.png">
         </div>
       </div>
-      <input *ngIf="send" type="text" placeholder="Код з СМС" [(ngModel)]="sms">
-      <div *ngIf="send">
+      <input *ngIf="service.state=='send'" type="number" placeholder="Код з СМС" [(ngModel)]="sms">
+      <button *ngIf="service.state=='send'" class="submit-sms" (click)="verifySMS(service)">Ок</button>  
+      <div *ngIf="service.state=='send'">
         <i class="fas fa-redo" id="redo"></i>
         <a class="resend">Надіслати повторно</a>
       </div>
-      <button *ngIf="!send" class="submit-sms" (click)="send = true">НАДІСЛАТИ СМС</button>
-      <button class="submit-sms" *ngIf="send" (click)="submit()">Почати послугу</button>
+      <button *ngIf="service.state=='new'" class="submit-sms" (click)="sendSMS(service)">НАДІСЛАТИ СМС</button>
+      <button class="submit-sms" *ngIf="service.state=='verified'" (click)="startService(service)">Почати послугу</button>
     </div>
-    <div class="date-div" *ngIf="showDate">
+    <div class="date-div" *ngIf="service.state=='started'||service.state=='finished'">
       <div class="start">
-        <input type="text" placeholder="Початок" [(ngModel)]="startTime">
+        <input type="text" placeholder="Початок" readonly [(ngModel)]="startTime">
       </div>
       <div class="end">
-        <input type="text" placeholder="Кінець" [(ngModel)]="endTime">
+        <input type="text" placeholder="Кінець" readonly [(ngModel)]="endTime">
       </div>
-      <button class="finish" (click)="finish()">ЗАВЕРШИТИ</button>
+      <button class="finish" *ngIf="service.state=='started'" (click)="finishService(service)">ЗАВЕРШИТИ</button>
     </div>
-    <div class="final" *ngIf="showFinal">
+    <div class="final" *ngIf="service.state=='finished'">
       <select>
         <option disabled>Виберіть результат</option>
         <option>2</option>
