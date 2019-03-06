@@ -14,7 +14,7 @@
     <input style="margin-top: 5px" matInput placeholder="Обрати клієнта" aria-label="State" [matAutocomplete]="auto"
            [(ngModel)]="nameItem"
            [formControl]="stateCtrl" (blur)="onBlurMethod()">
-    <div class="circle" routerLink="/clients">
+    <div class="circle" routerLink="/client">
       <img src="../../assets/img/pen.png">
     </div>
     <mat-autocomplete #auto="matAutocomplete">

@@ -66,10 +66,22 @@ export class TaskComponent implements OnInit {
   
     meettings= [];
 
+
+
     meettings_c= [{
-      date: '10-02-2019',
-      startTime: '10-02-2019 12:14',
-      endTime: '10-02-2019 12:32',
+      date:  new Date('10-02-2019'),
+      startTime: new Date('10-02-2019 12:14'),
+      endTime: new Date('10-02-2019 12:32'),
+      client: {
+          id: 1,
+          code: "ІІІ291180Ч",
+          firstname: "Іванов",
+          middlename: "Іван",
+          lastname: "Іванович",
+          phone: '0675380037',
+          bithdate: '29-11-1980',
+          sex: "Ч"
+        },
       services: [{
         id: 1,
         name: "Консультування",
@@ -77,7 +89,40 @@ export class TaskComponent implements OnInit {
       }]
     }];
 
+    clients_c= [
+      {
+      id: 1,
+      code: "ІІІ291180Ч",
+      firstname: "Іванов",
+      middlename: "Іван",
+      lastname: "Іванович",
+      phone: '0675380037',
+      bithdate: '29-11-1980',
+      sex: "Ч"
+      },
+      {
+        id: 2,
+        code: "ППП291180Ч",
+        firstname: "Петров",
+        middlename: "Петро",
+        lastname: "Петрович",
+        phone: '0730711196',
+        bithdate: '29-11-1980',
+        sex: "Ч"
+      },
+      {
+        id: 2,
+        code: "ССС291180Ч",
+        firstname: "Сидоров",
+        middlename: "Сидор",
+        lastname: "Сидорович",
+        phone: '0675380037',
+        bithdate: '29-11-1980',
+        sex: "Ч"
+      }     
+  ];
 
+    
   panelOpenStateChild=[];
   panelOpenStateSubChild=[];
 
@@ -102,6 +147,12 @@ export class TaskComponent implements OnInit {
         this.storage.set('meettings', this.meettings);  
     }
 
+
+    var clietns = this.storage.get("clients");
+    if (!clietns) {
+        this.storage.set('clients', this.clients_c);  
+    }    
+
   }
 
   meetingCreate(pservice) {
@@ -111,7 +162,8 @@ export class TaskComponent implements OnInit {
       [
         {
         id: 1,
-        name: pservice.name
+        name: pservice.name,
+        state: 'new'
       }]
     }
   );  
