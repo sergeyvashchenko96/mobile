@@ -37,13 +37,13 @@
       </div>
     </div>
   </mat-drawer>
-  <mat-drawer-content (swiperight)="drawer.open()">
-    <div class="example-sidenav-content">
+  <mat-drawer-content>
+    <div class="example-sidenav-content" (swiperight)="drawer.open()">
       <a type="button" mat-button (click)="drawer.toggle()">
         <img src="../../assets/img/sidenav.png">
       </a>
       <img class="logo" src="../../assets/img/logo.png">
     </div>
-    <router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

@@ -10,5 +10,12 @@
 </head>
 <body>
   <app-root></app-root>
+  <script type="text/javascript" src="cordova.js"></script>
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function () {
+    history.go(1);
+  };
+</script>
 </body>
 </html>

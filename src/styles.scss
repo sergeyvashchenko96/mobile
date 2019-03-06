@@ -43,3 +43,6 @@ body {
 mat-drawer-content {
   touch-action: auto !important;
 }
+.mat-drawer-content{
+  min-height: 100vh;
+}
