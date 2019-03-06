@@ -28,4 +28,10 @@
     width: 100%;
     margin: 0 auto;
   }
+  .date{
+    mat-form-field{
+      width: 50%;
+    }
+  }
 }
+
