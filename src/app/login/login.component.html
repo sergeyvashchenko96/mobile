@@ -9,7 +9,10 @@
       <img class="eye" src="../../assets/img/eye.png"  (click)="password()">
       <input matInput formControlName="password" placeholder="Введите пароль" [type]="show ? 'text' : 'password'">
     </mat-form-field>
-    <button type="submit" [disabled]="checkForm()"  routerLink="/task">
+    <mat-error *ngIf="!isValid">
+      E-mail або пароль невірні
+    </mat-error>
+    <button type="submit" (click)="checkForm()">
       УВІЙТИ
     </button>
   </form>

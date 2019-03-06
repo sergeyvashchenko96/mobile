@@ -4,7 +4,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
-import {MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatChipsModule, MatIconModule,  MatNativeDateModule} from '@angular/material';
+import {
+  MatFormFieldModule,
+  MatInputModule,
+  MatAutocompleteModule,
+  MatChipsModule,
+  MatIconModule,
+  MatNativeDateModule
+} from '@angular/material';
 import {TaskComponent} from './task/task.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -13,13 +20,14 @@ import {ClientsComponent} from './clients/clients.component';
 import {MeetingsComponent} from './meetings/meetings.component';
 import {CreateMeetingComponent} from './create-meeting/create-meeting.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { SecondChipsComponent } from './create-meeting/second-chips/second-chips.component';
+import {SecondChipsComponent} from './create-meeting/second-chips/second-chips.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import 'hammerjs';
-import { FilterPipeModule } from 'ngx-filter-pipe';
-import { AddClientComponent } from './add-client/add-client.component';
+import {FilterPipeModule} from 'ngx-filter-pipe';
+import {AddClientComponent} from './add-client/add-client.component';
 import {MatSelectModule} from '@angular/material/select';
-import { StorageServiceModule } from 'ngx-webstorage-service';
+import {StorageServiceModule} from 'ngx-webstorage-service';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -57,6 +65,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    MatDialogModule,
     MatSelectModule,
     ReactiveFormsModule,
     FilterPipeModule,

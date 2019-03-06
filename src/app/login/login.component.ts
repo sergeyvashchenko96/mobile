@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-
+import {RouterModule, Router} from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,8 +12,9 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required]
   });
   show: boolean;
+  isValid = true;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, public router: Router) {
     this.show = false;
   }
 
@@ -27,9 +28,10 @@ export class LoginComponent implements OnInit {
   checkForm() {
     console.log(this.myForm.value.password);
     if (this.myForm.value.email === '1@1' && this.myForm.value.password === '1') {
-      return false;
-    } else{
-      return true;
+      this.isValid = true;
+      this.router.navigate(['task']);
+    } else {
+      this.isValid = false;
     }
   }
 
