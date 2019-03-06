@@ -8,8 +8,8 @@ import {RouterModule, Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   myForm: FormGroup = this.formBuilder.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required]
+    email: ['1@1', Validators.required],
+    password: ['1', Validators.required]
   });
   show: boolean;
   isValid = true;
