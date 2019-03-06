@@ -41,7 +41,6 @@ export class CreateMeetingComponent {
     this.specialityCtrl = new FormControl();
   }
 
- 
   submit() {
     this.showDate = true;
     this.showSms = false;
@@ -85,12 +84,12 @@ export class CreateMeetingComponent {
     this.counter++;
   }
 
-  ngOnInit() {  
+  ngOnInit() {
     this.meetting = this.storage.get("current_meetting");
-    
+
 
     this.project = this.storage.get("project");
-         
+
       for (let i = 0; i < this.project.packages.length ; i++) {
         for (let j = 0; j < this.project.packages[i].services.length ; j++) {
           this.specialitys.push(  this.project.packages[i].services[j].name + "(" + this.project.packages[i].name + ")");

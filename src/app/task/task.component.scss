@@ -32,11 +32,9 @@
 }
 
 
-
-
 ::ng-deep mat-expansion-panel{
   box-shadow: none !important;
-}  
+}
 
 
 .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-keyboard-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-program-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]) .mat-expansion-panel-header:not(.non-active-header) .mat-expansion-panel-header:not(.child):hover {
@@ -50,8 +48,6 @@
 ::ng-deep .mat-expansion-panel-body {
   padding: 2px 2px 2px 2px !important;
 }
-
-
 
 
 .child.active-header {
@@ -86,14 +82,11 @@
   }
 }
 
-
-
-
 .item-service {
   display: flex;
   justify-content: space-between;
-    align-items: center;
-  padding: 10px 0px 10px 30px !important ;
+  align-items: center;
+  padding: 5px 0px 5px 30px !important ;
   max-width: 282px;
   border-bottom: solid 1px #d3d3d3;
   p {
@@ -103,6 +96,7 @@
 }
 
 .item-service.child {
+  padding-left: 40px !important ;
   p {
     font-size: 16px;
     font-weight: normal;
